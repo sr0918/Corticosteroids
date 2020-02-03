@@ -23,36 +23,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        /*  val tab = Array(3,{Array(3,{0})})
-        tab[0] = arrayOf(1, 2, 3)
-        tab[1] = arrayOf(4, 5, 6)
-        tab[2] = arrayOf(7, 8, 9)*/
 
-        /* var x = 15.0
-        var fla = mutableListOf<Double>()
-        for (i in 0..571){
-            x += 0.1
-            val y = x.toBigDecimal().setScale(1, RoundingMode.UP).toDouble()
-            x=y
-            fla.add(x)
-
-            //println(fla[i])
-        }
-
-    val flAdapter = ArrayAdapter(this,android.R.layout.simple_spinner_dropdown_item, fla)
-
-        spinnerFL.adapter= flAdapter
-        spinnerFL.onItemSelectedListener = object:
-
-        AdapterView.OnItemSelectedListener {
-        override fun onNothingSelected(parent: AdapterView<*>?) {
-            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-        }
-
-        override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-            selection = fla[position].toString()
-        }
-    }*/
         val drugAdapter = ArrayAdapter(this, R.layout.spinner_custom, drugs)
         drugAdapter.setDropDownViewResource(R.layout.custom_spinner_dropdown)
         spinnerDrugFrom.adapter = drugAdapter
@@ -71,19 +42,6 @@ class MainActivity : AppCompatActivity() {
                 drugFromSelect = drugs[position]
             }
         }
-
-        /*spinnerDrugTo.adapter = drugAdapter
-        spinnerDrugTo.onItemSelectedListener = object:
-            AdapterView.OnItemSelectedListener {
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-            }
-
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                drugToSelect = drugs[position]
-                TVDrugTo.text = drugToSelect
-            }
-        }*/
 
         button.setOnClickListener {
 
