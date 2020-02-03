@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">ScrollData</string>
+    <string name="main_background_image">main_background_image</string>
+    <string name="corticosteroid_calculator">CORTICOSTEROID CALCULATOR</string>
+    <string name="dose_input" />
+    <string name="provide_dose_mg">provide dose (mg)</string>
+    <string name="convert_one">CONVERT</string>
+    <string name="betamethasone_one">Betamethasone</string>
+    <string name="cortisone_one">Cortisone</string>
+    <string name="triamcinolone_one">Triamcinolone</string>
+    <string name="methylprednisolone_one">Methylprednisolone</string>
+    <string name="hydrocortisone_one">Hydrocortisone</string>
+    <string name="dexamethasone_one">Dexamethasone</string>
+    <string name="prednisolone_one">Prednisolone</string>
+    <string name="provide_dose_mg_one">provide dose (mg)</string>
+    <string name="convert">CONVERT</string>
+    <string name="betamethasone">Betamethasone</string>
+    <string name="triamcinolone">Triamcinolone</string>
+    <string name="cortisone">Cortisone</string>
+    <string name="methylprednisolone">Methylprednisolone</string>
+    <string name="hydrocortisone">Hydrocortisone</string>
+    <string name="dexamethasone">Dexamethasone</string>
+    <string name="prednisolone">Prednisolone</string>
 </resources>

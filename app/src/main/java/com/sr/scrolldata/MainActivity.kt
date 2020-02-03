@@ -1,9 +1,11 @@
 package com.sr.scrolldata
 
+import android.content.Context
 import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
@@ -22,7 +24,11 @@ class MainActivity : AppCompatActivity() {
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+// hide keyboard function
+        fun hideKeyboard(){
+        val inputManager:InputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        inputManager.hideSoftInputFromWindow(currentFocus?.windowToken, InputMethodManager.SHOW_FORCED)
+        }
 
         val drugAdapter = ArrayAdapter(this, R.layout.spinner_custom, drugs)
         drugAdapter.setDropDownViewResource(R.layout.custom_spinner_dropdown)
@@ -44,7 +50,10 @@ class MainActivity : AppCompatActivity() {
         }
 
         button.setOnClickListener {
+// hide keyboard
+            hideKeyboard()
 
+// checkon the string is not ampty  = crash
             if (getMg.text.toString() == "") {
                 Toast.makeText(this, "Please, provide valid amount!", Toast.LENGTH_LONG)
                     .show()
@@ -52,10 +61,12 @@ class MainActivity : AppCompatActivity() {
                 dose = getMg.text.toString().toDouble()
             }
 
+// checkon the value is not too big
             if (dose > 10000.0) {
                 Toast.makeText(this, "Please, provide valid amount!", Toast.LENGTH_LONG)
                     .show()
             } else {
+// show the result views
                 if (drugFromSelect !== "SELECT DRUG") {
                     PrednisoloneTV.visibility = View.VISIBLE
                     PrednisoloneDoseTV.visibility = View.VISIBLE
@@ -77,31 +88,31 @@ class MainActivity : AppCompatActivity() {
                         .show()
 
                 }
-                if (drugFromSelect == "Hydrocotisone") {
+                if (drugFromSelect == "Hydrocortisone") {
                     var PrednisoloneDose =
-                        (dose * 1).toBigDecimal().setScale(1, RoundingMode.UP)
+                        (dose * 0.25).toBigDecimal().setScale(1, RoundingMode.UP)
                             .toDouble()
                     PrednisoloneDoseTV.text = PrednisoloneDose.toString()
                     var CortisoneDose =
-                        (dose * 5).toInt()
+                        (dose * 1.25).toInt()
                     cortisoneDoseTV.text = CortisoneDose.toString()
                     var betamethasoneDose =
-                        (dose * 0.12).toBigDecimal().setScale(1, RoundingMode.UP)
+                        (dose * 0.03).toBigDecimal().setScale(1, RoundingMode.UP)
                             .toDouble()
                     betamethasoneDoseTV.text = betamethasoneDose.toString()
                     var dexamethasoneDose =
-                        (dose * 0.15).toBigDecimal().setScale(2, RoundingMode.UP)
+                        (dose * 0.0375).toBigDecimal().setScale(2, RoundingMode.UP)
                             .toDouble()
                     dexamethasoneDoseTV.text = dexamethasoneDose.toString()
                     var hydrocortisoneDose =
-                        (dose * 4).toInt()
+                        (dose * 1).toInt()
                     hydrocortisoneDoseTV.text = hydrocortisoneDose.toString()
                     var triamcinoloneDose =
-                        (dose * 0.8).toBigDecimal().setScale(1, RoundingMode.UP)
+                        (dose * 0.2).toBigDecimal().setScale(1, RoundingMode.UP)
                             .toDouble()
                     triamcinoloneDoseTV.text = triamcinoloneDose.toString()
                     var methylprednisoloneDose =
-                        (dose * 0.8).toBigDecimal().setScale(1, RoundingMode.UP)
+                        (dose * 0.2).toBigDecimal().setScale(1, RoundingMode.UP)
                             .toDouble()
                     methylprednisoloneDoseTV.text = methylprednisoloneDose.toString()
                 }

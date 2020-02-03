@@ -18,53 +18,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/imageone" />
+        app:srcCompat="@drawable/imageone"
+        android:contentDescription="@string/main_background_image" />
 
-    <!--<Spinner
-        android:id="@+id/spinnerFL"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.844"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/spinnerDrugFrom" />-->
-
-    <!--<Spinner
-        android:id="@+id/spinnerDrugTo"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="128dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/custom_spinner_dr"
-        android:spinnerMode="dialog"
-        android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />-->
-
-   <!-- <TextView
-        android:id="@+id/TV"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:text="SELECT  DRUG and DOSE TO  CONVERT"
-        android:textAlignment="center"
-        android:textColor="#3F51B5"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.015" />-->
 
     <TextView
         android:id="@+id/textView2"
@@ -74,7 +30,7 @@
         android:background="#404FA8"
         android:fontFamily="serif"
         android:gravity="center"
-        android:text="CORTICOSTEROID CALCULATOR"
+        android:text="@string/corticosteroid_calculator"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
@@ -105,15 +61,18 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:fontFamily="serif"
-        android:hint="provide dose (mg)"
+        android:hint="@string/provide_dose_mg"
         android:inputType="numberDecimal"
         android:maxLength="5"
         android:textAlignment="center"
         android:textColor="#212F73"
         android:textSize="18sp"
+        android:imeOptions="actionDone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerDrugFrom" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerDrugFrom"
+        android:autofillHints="@string/dose_input"
+        tools:targetApi="o" />
 
     <Button
         android:id="@+id/button"
@@ -124,7 +83,7 @@
         android:layout_marginEnd="32dp"
         android:background="@drawable/button_background"
         android:fontFamily="serif"
-        android:text="CONVERT"
+        android:text="@string/convert"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
@@ -164,7 +123,7 @@
                 android:background="@drawable/window_border"
                 android:fontFamily="serif"
                 android:gravity="center"
-                android:text="Betamethasone"
+                android:text="@string/betamethasone"
                 android:textColor="#212F73"
                 android:textSize="20sp"
                 android:visibility="invisible"
@@ -182,7 +141,7 @@
                 android:background="@drawable/window_border"
                 android:fontFamily="serif"
                 android:gravity="center"
-                android:text="Cortisone"
+                android:text="@string/cortisone"
                 android:textColor="#212F73"
                 android:textSize="20sp"
                 android:visibility="invisible"
@@ -200,7 +159,7 @@
                 android:background="@drawable/window_border"
                 android:fontFamily="serif"
                 android:gravity="center"
-                android:text="Triamcinolone"
+                android:text="@string/triamcinolone"
                 android:textColor="#212F73"
                 android:textSize="20sp"
                 android:visibility="invisible"
@@ -225,6 +184,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/methylprednisoloneTV"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toTopOf="@+id/methylprednisoloneTV"
                 tools:visibility="visible" />
 
             <TextView
@@ -237,7 +197,7 @@
                 android:background="@drawable/window_border"
                 android:fontFamily="serif"
                 android:gravity="center"
-                android:text="Methylprednisolone"
+                android:text="@string/methylprednisolone"
                 android:textColor="#212F73"
                 android:textSize="20sp"
                 android:visibility="invisible"
@@ -254,7 +214,7 @@
                 android:background="@drawable/window_border"
                 android:fontFamily="serif"
                 android:gravity="center"
-                android:text="Hydrocortisone"
+                android:text="@string/hydrocortisone"
                 android:textColor="#212F73"
                 android:textSize="20sp"
                 android:visibility="invisible"
@@ -333,7 +293,7 @@
                 android:background="@drawable/window_border"
                 android:fontFamily="serif"
                 android:gravity="center"
-                android:text="Dexamethasone"
+                android:text="@string/dexamethasone"
                 android:textColor="#212F73"
                 android:textSize="20sp"
                 android:visibility="invisible"
@@ -351,7 +311,7 @@
                 android:background="@drawable/window_border"
                 android:fontFamily="serif"
                 android:gravity="center"
-                android:text="Prednisolone"
+                android:text="@string/prednisolone"
                 android:textColor="#212F73"
                 android:textSize="20sp"
                 android:visibility="invisible"
@@ -374,6 +334,7 @@
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@+id/cortisoneTV"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/guideline"
                 app:layout_constraintTop_toTopOf="@+id/cortisoneTV"
@@ -396,6 +357,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/triamcinoloneTV"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toTopOf="@+id/triamcinoloneTV"
                 tools:visibility="visible" />
 
             <TextView
@@ -403,7 +365,6 @@
                 android:layout_width="0dp"
                 android:layout_height="41dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
                 android:layout_marginEnd="32dp"
                 android:background="@drawable/window_border"
                 android:fontFamily="serif"
